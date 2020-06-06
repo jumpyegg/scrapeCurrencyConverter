@@ -11,8 +11,8 @@ public class home {
 
 	public static void main(String[] args) {
 		
-		scraper.nameScraper();
-		rateScraper.rateScraper();
+		String[] names = scraper.nameScraper();
+		String[] rates = rateScraper.rateScraper();
 		
 	}
 

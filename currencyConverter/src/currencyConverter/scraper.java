@@ -9,10 +9,11 @@ import org.jsoup.select.Elements;
 
 public class scraper {
 
-	public static String nameScraper() {
-
+	public static String[] nameScraper() {
+		String[] names = new String[50];
 		try {
 			Document doc = Jsoup.connect("https://www.x-rates.com/table/?from=USD&amount=1").userAgent("Mozilla/17.0").get();
+			
 			
 			
 			int i = 0;
@@ -23,13 +24,15 @@ public class scraper {
 				}else {
 					final String ticker = row.select("td:nth-of-type(1)").text();
 					System.out.println(ticker);
+					names[i] = ticker;
+					
 				}	
 			}
 		}
 		catch(IOException e) {
 			e.printStackTrace();
 		}
-		String forNow = (""); 
-		return forNow;
+		
+		return names;
 	}
 }
