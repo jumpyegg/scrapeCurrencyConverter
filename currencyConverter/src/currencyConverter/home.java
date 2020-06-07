@@ -24,7 +24,8 @@ public class home {
 			nameRates.put(names[i], ratesDouble[i-1]);
 			System.out.println(names[i]);
 		}
-		
+		System.out.println("United States Dollar");
+		nameRates.put("United States Dollar", 1.0);
 		
 		System.out.println("please type in the name exactly when selecting currencies");
 		Scanner sc= new Scanner(System.in);
