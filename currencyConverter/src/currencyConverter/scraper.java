@@ -10,7 +10,7 @@ import org.jsoup.select.Elements;
 public class scraper {
 
 	public static String[] nameScraper() {
-		String[] names = new String[50];
+		String[] names = new String[51];
 		try {
 			Document doc = Jsoup.connect("https://www.x-rates.com/table/?from=USD&amount=1").userAgent("Mozilla/17.0").get();
 			
@@ -23,7 +23,10 @@ public class scraper {
 					continue;
 				}else {
 					final String ticker = row.select("td:nth-of-type(1)").text();
-					System.out.println(ticker);
+					//System.out.println(ticker);
+					i++;
+					if(i == 51)
+						break;
 					names[i] = ticker;
 					
 				}	
